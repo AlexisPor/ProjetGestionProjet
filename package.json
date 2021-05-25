@@ -19,7 +19,12 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
+    "bootstrap": "^5.0.0-beta3",
+    "font": "0.0.4",
+    "jquerry": "0.0.1-security",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
+    "rxjs-compat": "^6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

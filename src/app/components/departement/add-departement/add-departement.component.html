@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form [formGroup]="myFormDep" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="idDep">
+        IdDep : <input type="text" formControlName="idepartement">
+      </label>
+    </div>
+    <div>
+      <label for="Libelle">
+        Libelle : <input type="text" formControlName="libelle">
+      </label>
+    </div>
+    <button type="submit">Ajout</button>
+  </form>
+</body>
+</html>

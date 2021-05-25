@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id dep</th>
+      <th scope="col">libellé</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of dep">
+      <th scope="row">1</th>
+      <td>{{d.iddepartements}}</td>
+      <td>{{d.libelle}}</td>
+    </tr>
+  </tbody>
+</table>

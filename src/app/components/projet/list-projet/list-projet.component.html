@@ -1,0 +1,30 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id proj</th>
+      <th scope="col">Nom client</th>
+      <th scope="col">Date début</th>
+      <th scope="col">Date de fin estimée</th>
+      <th scope="col">Date de fin réel</th>
+      <th scope="col">Description</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of proj">
+      <th scope="row">1</th>
+      <td>{{p.idprojet}}</td>
+      <td>{{p.client}}</td>
+      <td>{{p.datedebut}}</td>
+      <td>{{p.datefinestimee}}</td>
+      <td>{{p.datefinreel}}</td>
+      <td>{{p.description}}</td>
+      <td>{{p.titre}}</td>
+      <td>{{p.type}}</td>
+    </tr>
+  </tbody>
+</table>
+
