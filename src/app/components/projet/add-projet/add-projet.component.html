@@ -1,1 +1,44 @@
-<p>add-projet works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form [formGroup]="myForm">
+    <div>
+      <label for="idproj">
+        Id projet : <input class="form-control" type="text" placeholder="ex: 787" formControlName="idprojet">
+      </label>
+    </div>
+    <div>
+      <label for="client">
+        Client : <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="client">
+      </label>
+    </div>
+    <div>
+      <label for="code">
+      Code : <input class="form-control" type="text" placeholder="ex: 1087" formControlName="code">
+    </label>
+    </div>
+    <div>
+      <label for="datedebut">
+         Date de début :<input class="form-control" type="date" placeholder="ex: 88" formControlName="idemploye">
+      </label>
+    </div>
+    <div class="form-group" formGroupName="afpaDepartements">
+      <h3>Département</h3>
+      <div>
+        <label for="iddepartements">
+          id Département : <input class="form-control" type="text" placeholder="ex: 178" formControlName="iddepartements">
+        </label>
+      </div>
+
+      <br>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </form>
+</body>
+</html>

@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DepartementComponent } from './components/departement/departement.component';
+
 import { AddEmployeComponent } from './components/employe/add-employe/add-employe.component';
 import { EmployeComponent } from './components/employe/employe.component';
 import { ModuleComponent } from './components/module/module.component';
@@ -21,6 +21,9 @@ import { ListEmployeComponent } from './components/employe/list-employe/list-emp
 import { ListDepartementComponent } from './components/departement/list-departement/list-departement.component';
 import { MenuComponent } from './header/menu/menu.component';
 import { ListProjetComponent } from './components/projet/list-projet/list-projet.component';
+import { UpdateEmployeComponent } from './components/employe/update-employe/update-employe.component';
+import { DepartementComponent } from './components/departement/departement.component';
+
 
 
 
@@ -42,7 +45,8 @@ import { ListProjetComponent } from './components/projet/list-projet/list-projet
     ListEmployeComponent,
     ListDepartementComponent,
     MenuComponent,
-    ListProjetComponent
+    ListProjetComponent,
+    UpdateEmployeComponent
   ],
   imports: [
     BrowserModule,

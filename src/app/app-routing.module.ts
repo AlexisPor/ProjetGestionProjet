@@ -6,7 +6,9 @@ import { ListDepartementComponent } from './components/departement/list-departem
 import { AddEmployeComponent } from './components/employe/add-employe/add-employe.component';
 import { EmployeComponent } from './components/employe/employe.component';
 import { ListEmployeComponent } from './components/employe/list-employe/list-employe.component';
+import { UpdateEmployeComponent } from './components/employe/update-employe/update-employe.component';
 import { ModuleComponent } from './components/module/module.component';
+import { AddProjetComponent } from './components/projet/add-projet/add-projet.component';
 import { ListProjetComponent } from './components/projet/list-projet/list-projet.component';
 import { ProjetComponent } from './components/projet/projet.component';
 import { RoleComponent } from './components/role/role.component';
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path:'list-departement',component: ListDepartementComponent},
   {path:'list-projet',component: ListProjetComponent},
   {path:'add-departement', component: AddDepartementComponent},
+  {path:'update-employe/:id', component: UpdateEmployeComponent},
+  {path:'add-projet', component: AddProjetComponent},
 ];
 
 @NgModule({

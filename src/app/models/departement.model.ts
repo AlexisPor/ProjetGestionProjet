@@ -1,7 +1,11 @@
-export class Departement{
 
-  constructor(iddepartement: number,
-              libelle: string){
-  }
+export class AfpaDepartements{
+
+
+  constructor( public iddepartements: number,
+               public libelle: string){
+
+
+    }
 
 }

@@ -1,10 +1,16 @@
-export class Employe{
+import { AfpaDepartements } from "./departement.model";
 
-  constructor(public nom: string,
-              public prenom: string,
-              public idemploye: number,
-              public mail: string,){
 
+ export class Employe {
+
+
+  public constructor(
+    public nom: string,
+    public prenom: string,
+    public idemploye: number,
+    public mail: string,
+    public afpaDepartements: AfpaDepartements
+  ) {
 
   }
 }

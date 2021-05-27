@@ -28,6 +28,16 @@ export class EmployeService {
 
   }
 
+  public delete(id: number) :Observable<any>{
+    return this.http.delete("http://localhost:8888/employe/delete/" + id);
+  }
 
 
+ public update( emp: Employe): Observable<any>{
+   return this.http.put("http://localhost:8888/employe/update", emp);
+ }
+
+ public findById(id: number) :Observable<any>{
+  return this.http.get("http://localhost:8888/employe/id/");
+}
 }

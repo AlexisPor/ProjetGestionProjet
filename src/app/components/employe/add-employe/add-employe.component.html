@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,23 +9,35 @@
   <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="prenom">
-        Prénom : <input type="text" formControlName="prenom">
+        Prénom : <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="prenom">
       </label>
     </div>
     <div>
       <label for="nom">
-        Nom : <input type="text" formControlName="nom">
+        Nom : <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="nom">
       </label>
     </div>
     <div>
-      Mail : <input type="text" formControlName="mail">
+      <label for="mail">
+      Mail : <input class="form-control" type="text" placeholder="ex: Alexis@gmail.com" formControlName="mail">
+    </label>
     </div>
     <div>
       <label for="id">
-         Id :<input type="number" formControlName="idemploye">
+         Id :<input class="form-control" type="text" placeholder="ex: 88" formControlName="idemploye">
       </label>
     </div>
-    <button type="submit">Ajout</button>
+    <div class="form-group" formGroupName="afpaDepartements">
+      <h3>Département</h3>
+      <div>
+        <label for="iddepartements">
+          id Département : <input class="form-control" type="text" placeholder="ex: 178" formControlName="iddepartements">
+        </label>
+      </div>
+
+      <br>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
   </form>
 </body>
 </html>

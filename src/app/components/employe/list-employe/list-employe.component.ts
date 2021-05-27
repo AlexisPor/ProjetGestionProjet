@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employe } from 'src/app/models/employe.model';
 import { EmployeService } from 'src/app/shared/employe.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ListEmployeComponent implements OnInit {
 
   emp:any[]=[];
 
-  constructor(servEmp:EmployeService){
+  constructor(private servEmp:EmployeService){
     servEmp.findAll().subscribe(
       (response)=>{
         console.log(response);
@@ -24,7 +25,17 @@ export class ListEmployeComponent implements OnInit {
     );
   }
 
+  onSuppEmp(id: number): void {
+    console.log("onSupp *******************")
+    this.servEmp.delete(id).subscribe(
+      (value)=>{
+        console.log("L'employé est supp")
+
+      })
+  }
+
   ngOnInit(): void {
   }
+
 
 }

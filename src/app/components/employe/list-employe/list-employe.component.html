@@ -2,17 +2,25 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Id</th>
       <th scope="col">Nom</th>
       <th scope="col">Prénom</th>
       <th scope="col">Email</th>
+      <th scope="col">id dep</th>
+      <th>Suppression</th>
+      <th>Update</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let e of emp">
       <th scope="row">1</th>
+      <td>{{e.idemploye}}</td>
       <td>{{e.nom}}</td>
       <td>{{e.prenom}}</td>
-      <td>@{{e.mail}}</td>
+      <td>{{e.mail}}</td>
+      <td>{{e.afpaDepartements.libelle}}</td>
+      <td><button type="submit" class="btn btn-danger" (click)='onSuppEmp(e.idemploye)'>Supprimer</button></td>
+      <td><button type="button" class="btn btn-success" routerLink="/update-employe/{{e.idemploye}}">Update</button></td>
     </tr>
   </tbody>
 </table>

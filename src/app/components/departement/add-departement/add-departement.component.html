@@ -9,16 +9,16 @@
 <body>
   <form [formGroup]="myFormDep" (ngSubmit)="onSubmit()">
     <div>
-      <label for="idDep">
-        IdDep : <input type="text" formControlName="idepartement">
+      <label for="iddep">
+        Id département : <input class="form-control" type="text" placeholder="ex: 787" formControlName="iddepartements">
       </label>
     </div>
     <div>
-      <label for="Libelle">
-        Libelle : <input type="text" formControlName="libelle">
+      <label for="prenom">
+        Libellé : <input class="form-control" type="text" placeholder="ex: Informatique" formControlName="libelle">
       </label>
     </div>
-    <button type="submit">Ajout</button>
+    <button type="submit" class="btn btn-success">Ajouter</button>
   </form>
 </body>
 </html>

@@ -2,6 +2,7 @@ import { UrlResolver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { Employe } from 'src/app/models/employe.model';
 import { EmployeService } from 'src/app/shared/employe.service';
 
@@ -28,15 +29,20 @@ this.myForm = this.formBuilder.group({
   prenom: this.formBuilder.control("",Validators.required),
   mail: this.formBuilder.control("",[Validators.required,Validators.email]),
   idemploye: this.formBuilder.control("",Validators.required),
+  afpaDepartements: this.formBuilder.group({
+    iddepartements: this.formBuilder.control("",Validators.required),
+    libelle: this.formBuilder.control("",Validators.required)
+  })
 });
 
   }
-  onSubmit(): void {
+  public onSubmit(): void {
     const dataEmp = this.myForm.value;
     const emp = new Employe(dataEmp.nom,
                             dataEmp.prenom,
                             dataEmp.idemploye,
-                            dataEmp.mail);
+                            dataEmp.mail,
+                            dataEmp.afpaDepartements);
     this.empService.addEmp(emp).subscribe(
       (response)=>{
         console.log(response);

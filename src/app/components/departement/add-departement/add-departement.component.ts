@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { error } from 'selenium-webdriver';
-import { Departement } from 'src/app/models/departement.model';
+import { AfpaDepartements } from 'src/app/models/departement.model';
+
 import { DepartementService } from 'src/app/shared/departement.service';
 
 @Component({
@@ -25,21 +26,26 @@ export class AddDepartementComponent implements OnInit {
   initOnForm(){
     this.myFormDep = this.formBuilder.group({
       libelle: this.formBuilder.control("",Validators.required),
-      iddepartement: this.formBuilder.control("",Validators.required)
+      iddepartements: this.formBuilder.control("",Validators.required)
+
 
     })
   }
 
   onSubmit(){
     const dataDep = this.myFormDep.value;
-    this.depServ.addDep(dataDep).subscribe(
+    const dep = new AfpaDepartements(dataDep.iddepartements,
+                                dataDep.libelle)
+    this.depServ.addDep(dep).subscribe(
       (response)=>{
         console.log(response);
+
       },
       (error)=>{
         console.log(`error${{error}}`);
       }
     );
     this.router.navigate(["list-departement"]);
+    console.log(this.myFormDep.value)
   }
 }
