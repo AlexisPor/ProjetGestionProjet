@@ -1,1 +1,44 @@
-<p>add-module works!</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="jumbotron col-md-5 offset-md-3" style="background-color: burlywood;">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div>
+    <h1>Création du module</h1>
+    </div>
+    <div>
+      <label for="idmodule"></label>
+      <input class="form-control" type="hidden" placeholder="ex: 1111" formControlName="idmodule">
+    </div>
+    <div>
+      <label for="datedebut">Date de début : </label>
+      <input class="form-control" type="date" formControlName="datedebut">
+    </div>
+    <div>
+      <label for="datefinestimee">Date de fin estimée : </label>
+      <input class="form-control" type="date" formControlName="datefinestimee">
+    </div>
+    <div>
+      <label for="datefinreel">Date de fin réel :</label>
+      <input class="form-control" type="date" formControlName="datefinreel">
+    </div>
+    <div>
+      <label for="nom">Nom :</label>
+      <input class="form-control" type="text" placeholder="ex: text" formControlName="nom">
+    </div>
+    <div class="form-group" >
+      <label for="projet"><h3>Projet</h3></label>
+      <select class="custom-select" name="proj" id="proj" formControlName="idprojet">
+           <option  *ngFor="let p of projet" [value]="p.idprojet"  >{{p.titre}}</option>
+         </select>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </form>
+</div>
+</body>
+</html>

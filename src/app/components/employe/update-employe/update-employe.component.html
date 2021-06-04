@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,27 +6,46 @@
   <title>Document</title>
 </head>
 <body>
-  <form [formGroup] = "formUpdate">
+  <form [formGroup]="formUpdate" *ngIf="formUpdate" (ngSubmit)="onSubmit()">
     <div>
       <label for="prenom">
-        Prénom : <input type="text" formControlName="prenom">
+        Prénom : <input class="form-control" type="text" formControlName="prenom">
       </label>
     </div>
     <div>
       <label for="nom">
-        Nom : <input type="text" formControlName="nom">
+        Nom : <input class="form-control" type="text" formControlName="nom">
       </label>
     </div>
     <div>
-      Mail : <input type="text" formControlName="mail">
+      <label for="mail">
+      Mail : <input class="form-control" type="text" formControlName="mail">
+    </label>
     </div>
     <div>
       <label for="id">
-         Id :<input type="number" formControlName="idemploye">
+         Id :<input class="form-control" type="text" formControlName="idemploye">
       </label>
     </div>
-    <button type="submit">Modif</button>
+    <div class="form-group" >
+      <h3>Projet</h3>
+      <select name="idproj" id="idproj" formControlName="idprojet">
+           <option *ngFor="let p of projet" [value]="p.idprojet" >{{p.titre}}</option>
+         </select>
+    </div>
+    <div class="form-group" >
+      <h3>Rôle</h3>
+      <select name="role" id="role" formControlName="idrole">
+           <option  *ngFor="let r of role" [value]="r.idrole" >{{r.libelle}}</option>
+         </select>
+    </div>
+    <div class="form-group" >
+      <h3>Département</h3>
+      <select name="idep" id="idep" formControlName="iddepartements">
+           <option  *ngFor="let d of departement" [value]="d.iddepartements" >{{d.libelle}}</option>
+         </select>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
   </form>
 </body>
 </html>
-

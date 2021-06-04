@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form [formGroup]="formUpRole" *ngIf="formUpRole" (ngSubmit)='onSubmit()'>
+    <div>
+      <label for="idrole">
+        Id role : <input class="form-control" type="text" formControlName="idrole">
+      </label>
+    </div>
+    <div>
+      <label for="libelle">
+        Libellé : <input class="form-control" type="text" formControlName="libelle">
+      </label>
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </form>
+</body>
+</html>

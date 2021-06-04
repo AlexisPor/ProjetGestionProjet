@@ -6,39 +6,51 @@
   <title>Document</title>
 </head>
 <body>
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="prenom">
-        Prénom : <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="prenom">
-      </label>
-    </div>
-    <div>
-      <label for="nom">
-        Nom : <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="nom">
-      </label>
-    </div>
-    <div>
-      <label for="mail">
-      Mail : <input class="form-control" type="text" placeholder="ex: Alexis@gmail.com" formControlName="mail">
-    </label>
-    </div>
-    <div>
-      <label for="id">
-         Id :<input class="form-control" type="text" placeholder="ex: 88" formControlName="idemploye">
-      </label>
-    </div>
-    <div class="form-group" formGroupName="afpaDepartements">
-      <h3>Département</h3>
+  <div class="jumbotron col-md-5 offset-md-3" id="jumbotron" style="background-color: burlywood;">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
       <div>
-        <label for="iddepartements">
-          id Département : <input class="form-control" type="text" placeholder="ex: 178" formControlName="iddepartements">
-        </label>
+        <h1>Création d'un employé</h1>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="prenom">Prénom : </label>
+        <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="prenom">
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom : </label>
+        <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="nom">
+      </div>
+      <div class="form-group">
+        <label for="mail">Mail : </label>
+        <input class="form-control" type="text" placeholder="ex: Alexis@gmail.com" formControlName="mail">
+      </div>
+      <div class="form-group">
+        <label for="id"></label>
+        <input class="form-control" type="hidden" placeholder="ex: 88" formControlName="idemploye">
+      </div>
+      <div class="form-group">
+        <label for="projet"><h3>Projet</h3></label>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="idprojet">
+          <option [value]="p.idprojet"  *ngFor="let p of projet" >{{p.titre}}</option>
+        </select>
+      </div>
+      <div class="form-group" >
+        <label for="role"><h3>Rôle</h3></label>
+        <select  class="custom-select" name="role" id="inputGroupSelect01" formControlName="idrole">
+          <option [value]="r.idrole"  *ngFor="let r of role" >{{r.libelle}}</option>
+        </select>
       </div>
 
-      <br>
-    </div>
+    <div class="form-group" >
+      <label for="departement"><h3>Département</h3></label>
+      <select class="custom-select" name="dep" id="dep" formControlName="iddepartements">
+           <option [value]="d.iddepartements"  *ngFor="let d of departement" >{{d.libelle}}</option>
+         </select>
+      </div>
+
     <button type="submit" class="btn btn-success">Ajouter</button>
   </form>
+</div>
 </body>
 </html>
 

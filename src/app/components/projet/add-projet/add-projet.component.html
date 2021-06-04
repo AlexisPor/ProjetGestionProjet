@@ -7,38 +7,47 @@
   <title>Document</title>
 </head>
 <body>
-  <form [formGroup]="myForm">
+  <div class="jumbotron col-md-5 offset-md-3" style="background-color: burlywood;">
+  <form [formGroup]="myForm" (ngSubmit)='onSubmit()'>
+    <div><h1>Création du projet</h1></div>
     <div>
-      <label for="idproj">
-        Id projet : <input class="form-control" type="text" placeholder="ex: 787" formControlName="idprojet">
-      </label>
+      <label for="idproj"></label>
+      <input class="form-control" type="hidden" placeholder="ex: 787" formControlName="idprojet">
     </div>
     <div>
-      <label for="client">
-        Client : <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="client">
-      </label>
+      <label for="client">Client :</label>
+      <input class="form-control" type="text" placeholder="ex: Alexis" formControlName="client">
     </div>
     <div>
-      <label for="code">
-      Code : <input class="form-control" type="text" placeholder="ex: 1087" formControlName="code">
-    </label>
+      <label for="code">Code :</label>
+      <input class="form-control" type="text" placeholder="ex: 1087" formControlName="code">
     </div>
     <div>
-      <label for="datedebut">
-         Date de début :<input class="form-control" type="date" placeholder="ex: 88" formControlName="idemploye">
-      </label>
+      <label for="datedebut">Date de début :</label>
+      <input class="form-control" type="date" formControlName="datedebut">
     </div>
-    <div class="form-group" formGroupName="afpaDepartements">
-      <h3>Département</h3>
-      <div>
-        <label for="iddepartements">
-          id Département : <input class="form-control" type="text" placeholder="ex: 178" formControlName="iddepartements">
-        </label>
-      </div>
-
-      <br>
+    <div>
+      <label for="datefinestimee">Date de fin estimée :</label>
+      <input class="form-control" type="date" formControlName="datefinestimee">
+    </div>
+    <div>
+      <label for="datefinreel">Date de fin réel :</label>
+      <input class="form-control" type="date" formControlName="datefinreel">
+    </div>
+    <div>
+      <label for="description">Description :</label>
+      <input class="form-control" type="text" formControlName="description">
+    </div>
+    <div>
+      <label for="titre">Titre :</label>
+      <input class="form-control" type="text" formControlName="titre">
+    </div>
+    <div>
+      <label for="type"> Type :</label>
+      <input class="form-control" type="text" formControlName="type">
     </div>
     <button type="submit" class="btn btn-success">Ajouter</button>
   </form>
+</div>
 </body>
 </html>

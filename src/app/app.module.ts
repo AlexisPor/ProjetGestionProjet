@@ -23,6 +23,14 @@ import { MenuComponent } from './header/menu/menu.component';
 import { ListProjetComponent } from './components/projet/list-projet/list-projet.component';
 import { UpdateEmployeComponent } from './components/employe/update-employe/update-employe.component';
 import { DepartementComponent } from './components/departement/departement.component';
+import { ListTacheComponent } from './components/tache/list-tache/list-tache.component';
+import { ListModuleComponent } from './components/module/list-module/list-module.component';
+import { ListRoleComponent } from './components/role/list-role/list-role.component';
+import { UpdateDepartementComponent } from './components/departement/update-departement/update-departement.component';
+import { UpdateModuleComponent } from './components/module/update-module/update-module.component';
+import { UpdateProjetComponent } from './components/projet/update-projet/update-projet.component';
+import { UpdateTacheComponent } from './components/tache/update-tache/update-tache.component';
+import { UpdateRoleComponent } from './components/role/update-role/update-role.component';
 
 
 
@@ -46,7 +54,15 @@ import { DepartementComponent } from './components/departement/departement.compo
     ListDepartementComponent,
     MenuComponent,
     ListProjetComponent,
-    UpdateEmployeComponent
+    UpdateEmployeComponent,
+    ListTacheComponent,
+    ListModuleComponent,
+    ListRoleComponent,
+    UpdateDepartementComponent,
+    UpdateModuleComponent,
+    UpdateProjetComponent,
+    UpdateTacheComponent,
+    UpdateRoleComponent
   ],
   imports: [
     BrowserModule,

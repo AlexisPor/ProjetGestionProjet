@@ -10,6 +10,10 @@ import { EmployeService } from 'src/app/shared/employe.service';
 export class ListEmployeComponent implements OnInit {
 
   emp:any[]=[];
+  nom: string;
+  employe: Employe;
+  empl: any[];
+
 
   constructor(private servEmp:EmployeService){
     servEmp.findAll().subscribe(
@@ -37,5 +41,13 @@ export class ListEmployeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSearchByName(){
+    this.employe.nom = this.nom;
+   this.servEmp.findByName(this.nom).subscribe(
+      (value)=>{
+        this.empl = value;
+      }
+    )
+  }
 
 }

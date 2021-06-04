@@ -1,9 +1,12 @@
+<h1>Liste département</h1>
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Id dep</th>
       <th scope="col">libellé</th>
+      <th scope="col">Suppression</th>
+      <th scope="col">Update</th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +14,9 @@
       <th scope="row">1</th>
       <td>{{d.iddepartements}}</td>
       <td>{{d.libelle}}</td>
+      <td><button type="submit" class="btn btn-danger" (click)='onSuppDep(d.iddepartements)'>Supprimer</button></td>
+      <td><button type="button" class="btn btn-success" routerLink="../update-departement/{{d.iddepartements}}">Update</button></td>
     </tr>
   </tbody>
 </table>
+

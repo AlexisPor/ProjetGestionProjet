@@ -34,8 +34,9 @@ export class AddDepartementComponent implements OnInit {
 
   onSubmit(){
     const dataDep = this.myFormDep.value;
-    const dep = new AfpaDepartements(dataDep.iddepartements,
-                                dataDep.libelle)
+    const dep = new AfpaDepartements();
+    dep.iddepartements=dataDep.iddepartements;
+    dep.libelle=dataDep.libelle;
     this.depServ.addDep(dep).subscribe(
       (response)=>{
         console.log(response);

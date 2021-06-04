@@ -1,3 +1,10 @@
+<h1>Liste d'employés</h1>
+<nav class="navbar navbar-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" [(ngModel)]="nom" name="nom" type="search" placeholder="Recherche" aria-label="Search" >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="onSearchByName()">Rechercher</button>
+  </form>
+</nav>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -6,7 +13,9 @@
       <th scope="col">Nom</th>
       <th scope="col">Prénom</th>
       <th scope="col">Email</th>
-      <th scope="col">id dep</th>
+      <th scope="col">Nom du departement</th>
+      <th scope="col">Nom de projet</th>
+      <th scope="col">libellé role</th>
       <th>Suppression</th>
       <th>Update</th>
     </tr>
@@ -19,8 +28,11 @@
       <td>{{e.prenom}}</td>
       <td>{{e.mail}}</td>
       <td>{{e.afpaDepartements.libelle}}</td>
+      <td>{{e.afpaProjet.titre}}</td>
+      <td>{{e.afpaRoles.libelle}}</td>
       <td><button type="submit" class="btn btn-danger" (click)='onSuppEmp(e.idemploye)'>Supprimer</button></td>
       <td><button type="button" class="btn btn-success" routerLink="/update-employe/{{e.idemploye}}">Update</button></td>
     </tr>
   </tbody>
 </table>
+

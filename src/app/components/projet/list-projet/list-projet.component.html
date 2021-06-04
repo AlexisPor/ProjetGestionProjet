@@ -1,4 +1,5 @@
 
+ <h1>Liste des projets</h1>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -11,6 +12,8 @@
       <th scope="col">Description</th>
       <th scope="col">Titre</th>
       <th scope="col">Type</th>
+      <th scope="col">Suppression</th>
+      <th scope="col">Update</th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +27,8 @@
       <td>{{p.description}}</td>
       <td>{{p.titre}}</td>
       <td>{{p.type}}</td>
+      <td><button type="submit" class="btn btn-danger" (click)='onSuppProj(p.idprojet)'>Supprimer</button></td>
+      <td><button type="button" class="btn btn-success" routerLink="/update-projet/{{p.idprojet}}">Update</button></td>
     </tr>
   </tbody>
 </table>

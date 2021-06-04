@@ -11,7 +11,7 @@ export class ListProjetComponent implements OnInit {
 
   proj: any[]=[];
 
-  constructor(projServ: ProjetService) {
+  constructor(private projServ: ProjetService) {
     projServ.findAll().subscribe(
       (response)=>{
         this.proj=response;
@@ -24,5 +24,12 @@ export class ListProjetComponent implements OnInit {
 
   ngOnInit(): void {
   }
+onSuppProj(id: number): void{
+this.projServ.delete(id).subscribe(
+  (response)=>{
+    console.log("Projet supp");
 
+  }
+)
+}
 }

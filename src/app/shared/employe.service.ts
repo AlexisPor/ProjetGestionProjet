@@ -38,6 +38,10 @@ export class EmployeService {
  }
 
  public findById(id: number) :Observable<any>{
-  return this.http.get("http://localhost:8888/employe/id/");
+  return this.http.get("http://localhost:8888/employe/find/"+id);
+}
+
+public findByName(nom: string): Observable<any>{
+  return this.http.get("http://localhost:8888/employe/search/"+nom);
 }
 }

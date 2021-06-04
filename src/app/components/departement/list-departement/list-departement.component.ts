@@ -10,7 +10,7 @@ export class ListDepartementComponent implements OnInit {
 
   dep: any[]=[];
 
-  constructor(depServ: DepartementService) {
+  constructor(private depServ: DepartementService) {
     depServ.findAll().subscribe(
       (response)=>{
         this.dep=response;
@@ -22,7 +22,14 @@ export class ListDepartementComponent implements OnInit {
       }
     );
    }
+  onSuppDep(id: number): void{
+    this.depServ.deleteDep(id).subscribe(
+      (value)=>{
+        console.log("Département supp");
 
+      }
+    )
+  }
 
   ngOnInit(): void {
   }

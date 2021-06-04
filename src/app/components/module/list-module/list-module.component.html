@@ -1,0 +1,29 @@
+<h1>Liste des modules</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Date de début</th>
+      <th scope="col">Date de fin estimée</th>
+      <th scope="col">Date de fin réel</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Nom du projet</th>
+      <th>Suppression</th>
+      <th>Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of mod">
+      <th scope="row">1</th>
+      <td>{{m.idmodule}}</td>
+      <td>{{m.datedebut}}</td>
+      <td>{{m.datefinestimee}}</td>
+      <td>{{m.datefinreel}}</td>
+      <td>{{m.nom}}</td>
+      <td>{{m.afpaProjet.titre}}</td>
+      <td><button type="submit" class="btn btn-danger" (click)='onSuppMod(m.idmodule)'>Supprimer</button></td>
+      <td><button type="button" class="btn btn-success" routerLink="/update-module/{{m.idmodule}}">Update</button></td>
+    </tr>
+  </tbody>
+</table>

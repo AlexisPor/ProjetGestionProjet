@@ -1,0 +1,29 @@
+<h1> Liste des tâches</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Date de début</th>
+      <th scope="col">Date de fin estimée</th>
+      <th scope="col">Date fin réel</th>
+      <th scope="col">libellé</th>
+      <th scope="col">Nom du module</th>
+      <th>Suppression</th>
+      <th>Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of tache">
+      <th scope="row">1</th>
+      <td>{{t.idtache}}</td>
+      <td>{{t.datedebut}}</td>
+      <td>{{t.datefinestimee}}</td>
+      <td>{{t.datefinreel}}</td>
+      <td>{{t.libelle}}</td>
+      <td>{{t.afpaModules.nom}}</td>
+      <td><button type="submit" class="btn btn-danger" (click)='onSuppTache(t.idtache)'>Supprimer</button></td>
+      <td><button type="button" class="btn btn-success" routerLink="../update-tache/{{t.idtache}}">Update</button></td>
+    </tr>
+  </tbody>
+</table>

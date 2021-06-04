@@ -1,0 +1,21 @@
+<h1>Liste des rôles</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id role</th>
+      <th scope="col">Libellé</th>
+      <th>Suppression</th>
+      <th>Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of role">
+      <th scope="row">1</th>
+      <td>{{r.idrole}}</td>
+      <td>{{r.libelle}}</td>
+      <td><button type="submit" class="btn btn-danger" (click)='onSuppRole(r.idrole)'>Supprimer</button></td>
+      <td><button type="button" class="btn btn-success" routerLink="/update-role/{{r.idrole}}">Update</button></td>
+    </tr>
+  </tbody>
+</table>

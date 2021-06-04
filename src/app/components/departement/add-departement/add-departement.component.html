@@ -7,18 +7,21 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="jumbotron col-md-5 offset-md-3" style="background-color: burlywood;">
   <form [formGroup]="myFormDep" (ngSubmit)="onSubmit()">
     <div>
-      <label for="iddep">
-        Id département : <input class="form-control" type="text" placeholder="ex: 787" formControlName="iddepartements">
-      </label>
+      <h1>Création du département</h1>
     </div>
-    <div>
-      <label for="prenom">
-        Libellé : <input class="form-control" type="text" placeholder="ex: Informatique" formControlName="libelle">
-      </label>
+    <div class="form-group">
+      <label for="iddep"></label>
+      <input class="form-control" type="hidden" placeholder="ex: 787" formControlName="iddepartements">
+    </div>
+    <div class="form-group">
+      <label for="prenom">Libellé : </label>
+      <input class="form-control" type="text" placeholder="ex: Informatique" formControlName="libelle">
     </div>
     <button type="submit" class="btn btn-success">Ajouter</button>
   </form>
+  </div>
 </body>
 </html>
